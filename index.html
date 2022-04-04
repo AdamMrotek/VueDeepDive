@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VueDeepDive</title>
+    <script src="https://unpkg.com/vue@3"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <div>{{ message }}</div>
+      <div>My age in 5 years will be {{ myAge + 5 }}</div>
+      <header>
+        <h1>Vue Course Goals</h1>
+      </header>
+      <section id="user-goal"></section>
+      <h2>My Course Goal</h2>
+      <p v-html="outputGoal()"></p>
+      <p>Learn more <a v-bind:href="vueLink">Vue Docs</a></p>
+      <img v-bind:src="vueImageLink" alt="" />
+      <div>{{Math.random()}}</div>
+      <input v-bind:value="message" type="text" /> -->
+
+      <button v-on:click="addToCounter(num)">Add</button>
+      <button v-on:click="reduceCounter(num)">Reduce</button>
+      <p>Resoult:{{counter}}</p>
+      <input
+        type="text"
+        v-on:keyup.enter="confirmeName( 'alfonzo')"
+        v-on:input="setName($event, 'alfonzo')"
+        name=""
+        id=""
+      />
+      <p>Your Name: {{name}}</p>
+      <p>Your Confirmed name {{confirmedName}}</p>
+      <input type="text" v-bind:value="name" v-on:input="setName()" />
+      <button v-on:click="resetInput">Reset input</button>
+    </div>
+
+    <script src="./App.js"></script>
+  </body>
+</html>
