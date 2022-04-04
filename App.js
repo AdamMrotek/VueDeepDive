@@ -11,7 +11,20 @@ const app = Vue.createApp({
       counter: 0,
       num: 3,
       name: "",
+      color: "",
       confirmedName: "",
+      isValid: true,
+      details: ["cotton:50%", "Wool:3%", "magic wool 100%"],
+      sizes: [
+        { size: "large", id: 0 },
+        { size: "medium", id: 1 },
+        { size: "small", id: 2 },
+      ],
+      variants: [
+        { id: 1, color: "blue" },
+        { id: 1, color: "green" },
+        { id: 1, color: "yellow" },
+      ],
     };
   },
   methods: {
@@ -23,6 +36,9 @@ const app = Vue.createApp({
       } else {
         return this.courseGoalB;
       }
+    },
+    updateColor(colorVar) {
+      this.color = colorVar;
     },
     addToCounter(num) {
       this.counter += num;

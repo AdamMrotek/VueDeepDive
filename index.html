@@ -33,9 +33,22 @@
         id=""
       />
       <p>Your Name: {{name}}</p>
-      <p>Your Confirmed name {{confirmedName}}</p>
+      <p
+        v-if="isValid"
+        :class="isValid?'valid':''"
+        :class.add="{moreValid:isValid}"
+      >
+        Your Confirmed name {{confirmedName}}
+      </p>
+      <p v-else>Your Confirmed name is not valid</p>
       <input type="text" v-bind:value="name" v-on:input="setName()" />
       <button v-on:click="resetInput">Reset input</button>
+      <p v-for="detail in details">{{detail}}</p>
+      <h3 v-for="size in sizes" :key="size.id" :id="size.id">{{size.size}}</h3>
+      <p v-for="variant in variants" @mouseover="updateColor(variant.color)">
+        {{variant.color}}
+      </p>
+      <p :style="{backgroundColor: color}">{{color}}</p>
     </div>
 
     <script src="./App.js"></script>
