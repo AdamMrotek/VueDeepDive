@@ -39,6 +39,7 @@ const app = Vue.createApp({
     },
     updateColor(colorVar) {
       this.color = colorVar;
+      console.log(this.color);
     },
     addToCounter(num) {
       this.counter += num;
@@ -56,21 +57,4 @@ const app = Vue.createApp({
       this.name = "";
     },
   },
-});
-app.mount("#app");
-const appDOM = document.querySelector("#app");
-appDOM.addEventListener("keydown", (e) => {
-  console.log(e);
-});
-document.addEventListener("keydown", (e) => {
-  switch (e.key) {
-    case "ArrowRight":
-      console.log(e.key);
-
-      break;
-    case "ArrowLeft":
-      break;
-    default:
-      return;
-  }
 });

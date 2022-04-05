@@ -48,9 +48,16 @@
       <p v-for="variant in variants" @mouseover="updateColor(variant.color)">
         {{variant.color}}
       </p>
-      <p :style="{backgroundColor: color}">{{color}}</p>
+      <product-display :color="color"></product-display>
+      <product-display :color="color"></product-display>
+      <product-display :color="color"></product-display>
     </div>
-
+    <!-- app -->
     <script src="./App.js"></script>
+    <!--component  -->
+    <script src="./newVueComponent.js"></script>
+    <script>
+      app.mount("#app");
+    </script>
   </body>
 </html>
